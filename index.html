@@ -11,6 +11,16 @@
 <meta property="og:image" content="https://vyronsociety.com/img/dental-wide.jpg">
 <meta property="og:url" content="https://vyronsociety.com/">
 <meta name="theme-color" content="#0a0a0a">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": "https://vyronsociety.com/#organization",
+  "name": "VYRON Society",
+  "url": "https://vyronsociety.com/",
+  "email": "vyronsociety@gmail.com"
+}
+</script>
 <meta name="description" content="VYRON is a done-for-you growth partner for established local and online businesses. We plan, build and run everything that brings new customers — ads, landing pages, follow-up and tracking — and report results in euros.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -459,7 +469,7 @@
   }
   select option{background:var(--grey-900);color:var(--white)}
   textarea{resize:vertical;min-height:90px}
-  .form-note{color:var(--grey-500);font-size:12.5px;margin-top:26px;text-align:center}
+  .form-note{color:var(--grey-400);font-size:12.5px;margin-top:26px;text-align:center}
   .form-success{display:none;text-align:center;padding:40px 10px}
   .form-success .ok{width:64px;height:64px;margin:0 auto 24px;border:1px solid var(--white);border-radius:50%;display:grid;place-items:center}
   .form-success .ok svg{width:26px;height:26px;stroke:var(--white);fill:none;stroke-width:1.4}
@@ -1910,6 +1920,13 @@
   .silver-text{color:var(--grey-300)!important}
 :where(a, button, input, select, textarea, summary):focus-visible { outline: 2px solid var(--lime); outline-offset: 3px; }
 </style>
+<noscript>
+  <style>
+    .reveal { opacity: 1; transform: none; }
+    .menu-btn, #langBtn, .lang-row, .vy-ask { display: none; }
+    section, .view { scroll-margin-top: 80px; }
+  </style>
+</noscript>
 </head>
 <body>
 <svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs><symbol id="vMark" viewBox="0 0 100 100"><path d="M4 6L18 10L50 96L48 96Z" fill="currentColor" fill-opacity="1"/><path d="M18 10L32 14L50 64L50 96Z" fill="currentColor" fill-opacity="0.78"/><path d="M68 14L82 10L50 96L50 64Z" fill="currentColor" fill-opacity="0.58"/><path d="M82 10L96 6L52 96L50 96Z" fill="currentColor" fill-opacity="0.4"/></symbol></defs></svg>
@@ -1976,7 +1993,7 @@
 </div>
 
 <!-- HERO -->
-<main class="view" data-view="home">
+<main class="view" id="home" data-view="home">
 <header class="hero" id="home-top">
   <div class="hero-slides" id="heroSlides" aria-hidden="true">
     <div class="hs" data-src="img/dental-wide.jpg" data-label="Clinics"></div>
@@ -2072,7 +2089,7 @@
   </div>
 </section>
 </main>
-<main class="view" data-view="who-we-are">
+<main class="view" id="who-we-are" data-view="who-we-are">
 <!-- TEAM -->
 <section class="page-head" id="who-we-are-top">
   <div class="wrap reveal">
@@ -2149,7 +2166,7 @@
 </section>
 
 </main>
-<main class="view" data-view="system">
+<main class="view" id="system" data-view="system">
 <section class="page-head" id="system-top">
   <div class="wrap reveal">
     <div class="eyebrow"><span class="idx">II.</span> The system</div>
@@ -2295,7 +2312,7 @@
 </section>
 
 </main>
-<main class="view" data-view="concepts">
+<main class="view" id="concepts" data-view="concepts">
 <section class="page-head" id="concepts-top">
   <div class="wrap reveal">
     <div class="eyebrow"><span class="idx">III.</span> Concepts</div>
@@ -2488,7 +2505,7 @@
 </section>
 
 </main>
-<main class="view" data-view="vision">
+<main class="view" id="vision" data-view="vision">
 <section class="page-head" id="vision-top">
   <div class="wrap reveal">
     <div class="eyebrow"><span class="idx">V.</span> VYRON · The vision</div>
@@ -2552,7 +2569,7 @@
 </section>
 </main>
 
-<main class="view" data-view="faq">
+<main class="view" id="faq" data-view="faq">
 <section class="page-head" id="faq-top">
   <div class="wrap reveal">
     <div class="eyebrow"><span class="idx">IV.</span> FAQ</div>
@@ -2598,7 +2615,8 @@
     </div>
     <div class="form-shell reveal">
       <span class="corner c1"></span><span class="corner c2"></span><span class="corner c3"></span><span class="corner c4"></span>
-      <form id="leadForm">
+      <p class="form-note" id="bookingEmail">To request a strategy call, email <a href="mailto:vyronsociety@gmail.com">vyronsociety@gmail.com</a>.</p>
+      <form id="leadForm" method="post" hidden>
         <input type="text" name="_honey" tabindex="-1" autocomplete="off" hidden>
         <div class="form-grid">
           
@@ -2648,7 +2666,7 @@
         <div style="text-align:center;margin-top:44px">
           <button type="submit" class="btn">Send request <span class="arr">→</span></button>
         </div>
-        <p class="form-note">We reply the same working day. Your information is used only to prepare for your call.</p>
+        <p class="form-note">We reply the same working day. Your request is sent to VYRON through FormSubmit so we can prepare for your call.</p>
       </form>
       <div class="form-success" id="formSuccess" role="status">
         <div class="ok"><svg viewBox="0 0 26 26"><path d="M5 13.5l5 5 11-12"/></svg></div>
@@ -4326,8 +4344,9 @@ void main(){
     });
   })();
 
-  // Strategy-call requests use the existing booking inbox.
-  document.getElementById('leadForm').addEventListener('submit', function (e) {
+  // Enable the form only after its submit handler is available.
+  const bookingForm = document.getElementById('leadForm');
+  bookingForm.addEventListener('submit', function (e) {
     e.preventDefault();
     const required = ['f-name','f-business','f-type','f-city','f-revenue','f-email'];
     let ok = true;
@@ -4372,6 +4391,9 @@ void main(){
       document.getElementById(saved ? 'formSuccess' : 'formFallback').style.display = 'block';
     })();
   });
+
+  bookingForm.hidden = false;
+  document.getElementById('bookingEmail').hidden = true;
 
   // ---- VYRON AI: working demos + "Ask VYRON" site assistant ----
   // Demonstrations use the built-in scripted replies.
