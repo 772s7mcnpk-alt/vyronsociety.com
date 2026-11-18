@@ -1652,10 +1652,10 @@
   .cn-lock,.cn-lock body{overflow:hidden}
   .cn.full{position:fixed;inset:0;z-index:600;margin:0;background:#000;display:flex;flex-direction:column;padding:14px clamp(12px,2vw,24px) 16px}
   .cn.full .cn-chips{margin:0 0 12px;padding:0;flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none}
-  .cn.full .cn-3d{flex:1;min-height:0;display:flex;perspective:none}
-  .cn.full .cn-screen{flex:1;display:flex;flex-direction:column;box-shadow:none;transform:none;border-color:rgba(255,255,255,.08)}
+  .cn.full .cn-3d{flex:1;min-height:0;display:flex;align-items:center;justify-content:center;container-type:size;perspective:none}
+  .cn.full .cn-screen{width:min(100%,calc((100vh - 132px) * 16 / 9));width:min(100%,calc(100cqh * 16 / 9));aspect-ratio:16/9;display:flex;flex-direction:column;box-shadow:none;transform:none;border:0}
   .cn.full .cn-chrome{display:none}
-  .cn.full .cn-view{flex:1;aspect-ratio:auto;container-type:size}
+  .cn.full .cn-view{flex:1;min-height:0;aspect-ratio:auto;container-type:size}
   .cn.full .cn-ctrl{margin-top:12px}
   @media(prefers-reduced-motion:reduce){.cn-title.on b{animation:none}}
 
@@ -1790,9 +1790,9 @@
   .door-v p{color:#5d5952}
   .door-v i{color:var(--ink-0)}
   .door-mark{width:40px;height:50px;fill:var(--ink-0);margin-bottom:auto}
-  .vision-hero{display:grid;grid-template-columns:180px 1fr;gap:60px;align-items:center;border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:60px 0}
-  .vision-mark{width:140px;height:175px;fill:var(--bone)}
-  @media(max-width:700px){.vision-hero{grid-template-columns:1fr;gap:30px}.vision-mark{width:80px;height:100px}}
+  .vision-hero{display:grid;grid-template-columns:180px minmax(0,1fr);gap:60px;align-items:center;border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:60px 0}
+  .vision-mark{display:block;width:min(100%,150px);height:auto;aspect-ratio:1;color:var(--bone);fill:none}
+  @media(max-width:700px){.vision-hero{grid-template-columns:minmax(0,1fr);gap:30px}.vision-mark{width:min(100%,80px)}}
   .five{list-style:none;margin-top:44px;border-top:1px solid var(--line)}
   .five li{display:grid;grid-template-columns:90px 1fr 1.3fr;gap:24px;padding:26px 0;border-bottom:1px solid var(--line);align-items:baseline}
   .five .n{font-family:'Cormorant Garamond',serif;font-size:32px;color:var(--grey-500)}
@@ -1868,7 +1868,6 @@
   .v-emblem{color:var(--bone)}
   .brand .v-emblem{width:28px;height:28px}
   .door-mark{width:52px;height:52px;color:var(--ink-0)}
-  .vision-mark{width:150px;height:150px;color:var(--bone);fill:none}
   .intro-v{width:64px;height:64px;color:#e9e9e9}
   .c3d{width:140px;height:140px;margin:-70px 0 0 -70px}
   .v-sheen{animation:vSheen 5.5s ease-in-out 1.8s infinite}
@@ -1903,7 +1902,7 @@
   .film-x:hover{border-color:var(--bone)}
   .film-box-cap{margin-top:14px;font-family:var(--mono);font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--ash)}
   .case-film{margin:10px 0 0;border:1px solid var(--line);background:#000}
-  .case-film video{width:100%;display:block;aspect-ratio:16/9}
+  .case-film video{width:100%;display:block;aspect-ratio:16/9;object-fit:contain}
 
 
   /* lime, used sparingly: only actions and results that went up */
