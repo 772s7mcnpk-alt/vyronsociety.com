@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="preload" as="image" type="image/webp" href="img/dental-hero.webp">
 <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20100%20100%22%3E%3Crect%20width%3D%22100%22%20height%3D%22100%22%20fill%3D%22%230A0A0A%22/%3E%3Cpath%20d%3D%22M4%206L18%2010L50%2096L48%2096Z%22%20fill%3D%22%23ECE7DD%22%20fill-opacity%3D%221%22/%3E%3Cpath%20d%3D%22M18%2010L32%2014L50%2064L50%2096Z%22%20fill%3D%22%23ECE7DD%22%20fill-opacity%3D%220.78%22/%3E%3Cpath%20d%3D%22M68%2014L82%2010L50%2096L50%2064Z%22%20fill%3D%22%23ECE7DD%22%20fill-opacity%3D%220.58%22/%3E%3Cpath%20d%3D%22M82%2010L96%206L52%2096L50%2096Z%22%20fill%3D%22%23ECE7DD%22%20fill-opacity%3D%220.4%22/%3E%3C/svg%3E">
 <title>VYRON Society · Growth Partners — We don&#39;t sell marketing. We deliver clients.</title>
 <link rel="canonical" href="https://vyronsociety.com/">
@@ -1996,16 +1997,16 @@
 <main class="view" id="home" data-view="home">
 <header class="hero" id="home-top">
   <div class="hero-slides" id="heroSlides" aria-hidden="true">
-    <div class="hs" data-src="img/dental-wide.jpg" data-label="Clinics"></div>
-    <div class="hs" data-src="img/kitchen-wide.jpg" data-label="Showrooms"></div>
-    <div class="hs" data-src="img/skincare-wide.jpg" data-label="E-commerce brands"></div>
-    <div class="hs" data-src="img/villa-wide.jpg" data-label="Hotels &amp; venues"></div>
-    <div class="hs" data-src="img/course-wide.jpg" data-label="Coaches &amp; creators"></div>
-    <div class="hs" data-src="img/renovation-wide.jpg" data-label="Renovation &amp; trades"></div>
-    <div class="hs" data-src="img/analytics-wide.jpg" data-label="Software &amp; SaaS"></div>
-    <div class="hs" data-src="img/academy-wide.jpg" data-label="Schools &amp; academies"></div>
-    <div class="hs" data-src="img/remote-wide.jpg" data-label="Online services"></div>
-    <div class="hs" data-src="img/office-wide.jpg" data-label="Professional firms"></div>
+    <div class="hs" data-src="img/dental-hero.webp" data-label="Clinics"></div>
+    <div class="hs" data-src="img/kitchen-hero.webp" data-label="Showrooms"></div>
+    <div class="hs" data-src="img/skincare-hero.webp" data-label="E-commerce brands"></div>
+    <div class="hs" data-src="img/villa-hero.webp" data-label="Hotels &amp; venues"></div>
+    <div class="hs" data-src="img/course-hero.webp" data-label="Coaches &amp; creators"></div>
+    <div class="hs" data-src="img/renovation-hero.webp" data-label="Renovation &amp; trades"></div>
+    <div class="hs" data-src="img/analytics-hero.webp" data-label="Software &amp; SaaS"></div>
+    <div class="hs" data-src="img/academy-hero.webp" data-label="Schools &amp; academies"></div>
+    <div class="hs" data-src="img/remote-hero.webp" data-label="Online services"></div>
+    <div class="hs" data-src="img/office-hero.webp" data-label="Professional firms"></div>
   </div>
   <div class="hs-meta" id="hsMeta" aria-hidden="true"><b id="hsNum">01</b><span id="hsLabel"></span><i><em id="hsBar"></em></i></div>
   <div class="frame" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
@@ -3382,7 +3383,8 @@ window.VY_I18N = {
       const prev = list[i];
       i = (i + 1) % list.length;
       const cur = list[i];
-      load(cur); load(list[(i + 1) % list.length]);
+      load(cur);
+      if (prev && !still) load(list[(i + 1) % list.length]);
       if (prev) { prev.classList.remove('on'); prev.classList.add('out'); setTimeout(() => prev.classList.remove('out'), 2500); }
       cur.classList.remove('out'); cur.classList.add('on');
       document.getElementById('hsNum').textContent = String(i + 1).padStart(2, '0');
