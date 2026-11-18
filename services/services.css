@@ -1,0 +1,25 @@
+:root {
+  color-scheme: dark;
+  background: #0a0a0a;
+  color: #ece7dd;
+  font: 1rem/1.65 system-ui, sans-serif;
+}
+body { margin: 0; }
+header, main, footer { max-width: 62rem; margin: auto; padding: 0 1.5rem; }
+header { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 1rem; padding-block: 1.5rem; }
+header a { color: inherit; }
+main { padding-block: clamp(2rem, 8vw, 6rem); }
+h1, h2, h3 { font-family: Georgia, serif; font-weight: 400; line-height: 1.13; }
+h1 { font-size: clamp(2.35rem, 6.5vw, 5.1rem); max-width: 17ch; margin: .5rem 0 1.5rem; }
+h2 { font-size: clamp(1.5rem, 3vw, 2.3rem); margin: 0 0 .7rem; }
+h3 { font-size: 1.3rem; margin-bottom: .3rem; }
+p { max-width: 65ch; }
+a { color: #c8ff46; text-underline-offset: .2em; }
+a:focus-visible { outline: 2px solid currentColor; outline-offset: .2rem; }
+section { border-top: 1px solid #56544f; padding: 2rem 0; }
+.hero { border: 0; padding-top: 0; }
+.kicker { font-size: .8rem; letter-spacing: .13em; text-transform: uppercase; }
+.intro, footer { color: #c8c4ba; }
+.cta { display: inline-block; padding: .6rem 1rem; background: #c8ff46; color: #0a0a0a; font-weight: 650; }
+.cta:focus-visible { outline-color: #c8ff46; }
+footer { padding-bottom: 2rem; }
